@@ -1,0 +1,16 @@
+D:\Projects\sales-order-management-system\backend\Application\bin\Debug\net8.0\Application.deps.json
+D:\Projects\sales-order-management-system\backend\Application\bin\Debug\net8.0\Application.dll
+D:\Projects\sales-order-management-system\backend\Application\bin\Debug\net8.0\Application.pdb
+D:\Projects\sales-order-management-system\backend\Application\bin\Debug\net8.0\Domain.dll
+D:\Projects\sales-order-management-system\backend\Application\bin\Debug\net8.0\Domain.pdb
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.sourcelink.json
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.dll
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\refint\Application.dll
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\Application.pdb
+D:\Projects\sales-order-management-system\backend\Application\obj\Debug\net8.0\ref\Application.dll

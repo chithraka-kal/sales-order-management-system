@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ch\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\Projects\\sales-order-management-system\\Backend\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj",
+      "projectPath": "D:\\Projects\\sales-order-management-system\\Backend\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\ch\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\sales-order-management-system\\backend\\Application\\obj\\",
+      "outputPath": "D:\\Projects\\sales-order-management-system\\Backend\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ch\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -31,7 +50,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projects\\sales-order-management-system\\backend\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Domain\\Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

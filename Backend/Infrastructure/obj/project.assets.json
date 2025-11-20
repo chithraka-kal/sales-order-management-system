@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\sales-order-management-system\\backend\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "D:\\Projects\\sales-order-management-system\\Backend\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "D:\\Projects\\sales-order-management-system\\Backend\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\ch\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\sales-order-management-system\\backend\\Infrastructure\\obj\\",
+      "outputPath": "D:\\Projects\\sales-order-management-system\\Backend\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ch\\AppData\\Roaming\\NuGet\\NuGet.Config"
