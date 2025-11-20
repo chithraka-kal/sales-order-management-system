@@ -37,25 +37,24 @@ namespace API.Controllers
             return "Database already has data.";
         }
 
-        [cite_start]// GET: api/sales/customers (Screen 1 Dropdown) [cite: 89]
+        // GET: api/sales/customers
         [HttpGet("customers")]
         public async Task<ActionResult<List<Customer>>> GetCustomers()
         {
             return await _context.Customers.ToListAsync();
         }
 
-        [cite_start]// GET: api/sales/items (Screen 1 Dropdown) [cite: 92]
+        // GET: api/sales/items
         [HttpGet("items")]
         public async Task<ActionResult<List<Item>>> GetItems()
         {
             return await _context.Items.ToListAsync();
         }
 
-        [cite_start]// POST: api/sales (Screen 1 Save) [cite: 104]
+        // POST: api/sales
         [HttpPost]
         public async Task<ActionResult<SalesOrder>> CreateOrder(SalesOrder order)
         {
-            // Simple validation
             if (order.Items == null || order.Items.Count == 0)
                 return BadRequest("Order must have items.");
 
@@ -65,12 +64,12 @@ namespace API.Controllers
             return CreatedAtAction(nameof(GetOrders), new { id = order.Id }, order);
         }
 
-        [cite_start]// GET: api/sales (Screen 2 List) [cite: 122]
+        // GET: api/sales
         [HttpGet]
         public async Task<ActionResult<List<SalesOrder>>> GetOrders()
         {
             return await _context.SalesOrders
-                .Include(o => o.Customer) // JOIN Customer table
+                .Include(o => o.Customer)
                 .OrderByDescending(o => o.InvoiceDate)
                 .ToListAsync();
         }

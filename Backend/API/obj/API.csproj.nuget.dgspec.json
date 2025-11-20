@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\sales-order-management-system\\backend\\API\\API.csproj": {}
+    "D:\\Projects\\sales-order-management-system\\backend\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\sales-order-management-system\\backend\\API\\API.csproj": {
+    "D:\\Projects\\sales-order-management-system\\backend\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\sales-order-management-system\\backend\\API\\API.csproj",
+        "projectUniqueName": "D:\\Projects\\sales-order-management-system\\backend\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\API\\API.csproj",
+        "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\api\\API.csproj",
         "packagesPath": "C:\\Users\\ch\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\sales-order-management-system\\backend\\API\\obj\\",
+        "outputPath": "D:\\Projects\\sales-order-management-system\\backend\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ch\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -28,6 +28,9 @@
             "projectReferences": {
               "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj": {
                 "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj"
+              },
+              "D:\\Projects\\sales-order-management-system\\backend\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Domain\\Domain.csproj"
               },
               "D:\\Projects\\sales-order-management-system\\backend\\Infrastructure\\Infrastructure.csproj": {
                 "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Infrastructure\\Infrastructure.csproj"
@@ -57,6 +60,12 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -249,11 +258,19 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

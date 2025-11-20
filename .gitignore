@@ -1,0 +1,51 @@
+# --- General ---
+.DS_Store
+Thumbs.db
+*.log
+
+# --- VS Code ---
+.vscode/
+*.code-workspace
+
+# --- Backend (.NET Core) ---
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Local Database files
+*.db
+*.mdf
+*.ldf
+*.sqlite
+
+# Secrets and Local Settings
+**/appsettings.Development.json
+**/appsettings.local.json
+**/secrets.json
+
+# Migration backups
+backend/Infrastructure/Migrations/*.Designer.cs.backup
+
+# --- Frontend (React/Node) ---
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vite specific
+*.tsbuildinfo

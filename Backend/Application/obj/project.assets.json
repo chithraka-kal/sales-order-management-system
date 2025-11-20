@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\sales-order-management-system\\Backend\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "D:\\Projects\\sales-order-management-system\\Backend\\Application\\Application.csproj",
+      "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\ch\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\sales-order-management-system\\Backend\\Application\\obj\\",
+      "outputPath": "D:\\Projects\\sales-order-management-system\\backend\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ch\\AppData\\Roaming\\NuGet\\NuGet.Config"
