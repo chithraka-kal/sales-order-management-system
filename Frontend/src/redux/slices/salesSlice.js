@@ -12,7 +12,7 @@ const salesSlice = createSlice({
     setOrders: (state, action) => {
       state.orders = action.payload;
     },
-    // We will add more actions here later
+    
   },
 });
 
