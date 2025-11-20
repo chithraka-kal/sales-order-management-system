@@ -241,6 +241,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj": {
+                "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Application\\Application.csproj"
+              },
               "D:\\Projects\\sales-order-management-system\\backend\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\Projects\\sales-order-management-system\\backend\\Domain\\Domain.csproj"
               }

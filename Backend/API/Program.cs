@@ -1,32 +1,41 @@
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
+using Application.Interfaces; 
+using Application.Services;   
+using Infrastructure.Repositories; 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ---  Add Database Context ---
+// Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// ---  Add CORS (Allow React) ---
+//  AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
+
+// N-Tier Services - Dependency Injection
+builder.Services.AddScoped<ISalesOrderRepository, SalesOrderRepository>();
+builder.Services.AddScoped<ISalesOrderService, SalesOrderService>();
+
+// Controllers 
+builder.Services.AddControllers().AddJsonOptions(x =>
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
-        policy => policy.WithOrigins("http://localhost:5173") // React dev server
+        policy => policy.WithOrigins("http://localhost:5173", "http://localhost:5278")
                         .AllowAnyMethod()
                         .AllowAnyHeader());
 });
 
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAutoMapper(typeof(Program));
 var app = builder.Build();
 
-// --- Enable CORS ---
 app.UseCors("AllowReactApp");
-
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();

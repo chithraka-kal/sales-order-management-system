@@ -16,3 +16,5 @@ D:\Projects\sales-order-management-system\backend\Infrastructure\obj\Debug\net8.
 D:\Projects\sales-order-management-system\backend\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 D:\Projects\sales-order-management-system\backend\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 D:\Projects\sales-order-management-system\backend\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+D:\Projects\sales-order-management-system\backend\Infrastructure\bin\Debug\net8.0\Application.dll
+D:\Projects\sales-order-management-system\backend\Infrastructure\bin\Debug\net8.0\Application.pdb
