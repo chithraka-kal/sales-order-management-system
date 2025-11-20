@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@media print {
+  button, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+
+}

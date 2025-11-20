@@ -1,19 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      // Defined in instruction 2.2 
       colors: {
-        
-        gray: {
-          100: '#f3f4f6',
-          300: '#d1d5db',
-          700: '#374151',
-        }
+        primary: {
+          DEFAULT: '#2563EB', 
+          hover: '#1D4ED8',   
+          light: '#DBEAFE',  
+        },
+        secondary: '#6B7280', 
+        success: '#10B981',  
+        danger: '#EF4444',   
+        surface: '#F9FAFB',   
+        border: '#D1D5DB',   
+      },
+      
+      spacing: {
+        'input': '0.5rem',   
+        'card': '1.5rem',    
+      },
+      
+      fontSize: {
+        'heading': ['1.5rem', { lineHeight: '2rem', fontWeight: '700' }], 
+        'label': ['0.875rem', { fontWeight: '600' }], 
       }
     },
   },
