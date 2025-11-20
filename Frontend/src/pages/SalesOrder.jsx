@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useOrderForm } from "../hooks/useOrderForm"; // Uses the Hook Layer
+import { useOrderForm } from "../hooks/useOrderForm"; 
 import { LabelInput, LabelSelect, Button } from "../components/FormElements";
 import { salesService } from "../services/salesService";
 import { calculateGrandTotals } from "../utils/calculations";
 
 export default function SalesOrder() {
-  // 1. Use Custom Hook (Connects to Redux)
+  // Use Custom Hook Connects to Redux
   const { 
     currentOrder, setCustomer, updateRow, addRow, removeRow, submitOrder, setInvoiceData 
   } = useOrderForm();
@@ -48,7 +48,7 @@ export default function SalesOrder() {
             }}
             options={customers.map(c => ({ value: c.id, label: c.name }))}
           />
-          {/* FIX: Removed readOnly - Address is now editable [cite: 91] */}
+         
           <LabelInput 
             label="Address 1" 
             value={currentOrder.customerDetails.address1 || ''} 

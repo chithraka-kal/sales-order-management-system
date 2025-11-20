@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SalesOrder from './pages/SalesOrder';
 
-// --- 1. Import Toastify & CSS ---
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,7 +10,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-100 text-gray-700">
         
-        {/* --- 2. Add the Container Here --- */}
+       
         <ToastContainer position="top-right" autoClose={3000} />
 
         <Routes>

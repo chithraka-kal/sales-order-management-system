@@ -1,5 +1,5 @@
-using API.Models; // Namespace for your DTOs
-using AutoMapper; // Namespace for AutoMapper
+using API.Models; 
+using AutoMapper; 
 using Domain.Entities;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +12,7 @@ namespace API.Controllers
     public class SalesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly IMapper _mapper; // 1. Inject AutoMapper
+        private readonly IMapper _mapper; 
 
         public SalesController(ApplicationDbContext context, IMapper mapper)
         {
@@ -67,6 +67,43 @@ namespace API.Controllers
             if (order == null) return NotFound();
 
             return order;
+        }
+
+        // PUT: api/sales/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateOrder(int id, CreateOrderDto dto)
+        {
+            var existingOrder = await _context.SalesOrders
+                .Include(o => o.Items)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (existingOrder == null) return NotFound();
+
+            // 1. Update Header
+            existingOrder.InvoiceNo = dto.InvoiceNo;
+            existingOrder.InvoiceDate = dto.InvoiceDate;
+            existingOrder.CustomerId = dto.CustomerId;
+
+            // 2. Update Items (Simplest approach: Remove old, add new)
+            _context.SalesOrderItems.RemoveRange(existingOrder.Items);
+            
+            var newItems = _mapper.Map<List<SalesOrderItem>>(dto.Items);
+            
+            // Recalculate Totals
+            foreach (var item in newItems)
+            {
+                item.ExclAmount = item.Qty * item.Price;
+                item.TaxAmount = item.ExclAmount * (item.TaxRate / 100);
+                item.InclAmount = item.ExclAmount + item.TaxAmount;
+            }
+            
+            existingOrder.Items = newItems;
+            existingOrder.TotalExcl = newItems.Sum(i => i.ExclAmount);
+            existingOrder.TotalTax = newItems.Sum(i => i.TaxAmount);
+            existingOrder.TotalIncl = newItems.Sum(i => i.InclAmount);
+
+            await _context.SaveChangesAsync();
+            return NoContent();
         }
 
         // POST: api/sales (Updated: Uses DTO + AutoMapper)

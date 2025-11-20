@@ -8,11 +8,11 @@ export default function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // FIX: Map 'list' from Redux to 'orders' variable
+
   const { list: orders, status, error } = useSelector((state) => state.sales);
 
   useEffect(() => {
-    // Only fetch if we haven't loaded data yet or if list is empty
+    
     dispatch(fetchOrders());
   }, [dispatch]);
 
@@ -29,8 +29,7 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Pass the corrected 'orders' array to the table */}
-      {/* We add a safety check (|| []) just in case */}
+      
       <OrdersTable orders={orders || []} onRowClick={(id) => navigate(`/order/${id}`)} />
     </div>
   );

@@ -18,7 +18,7 @@ export const useOrderForm = () => {
   const { id } = useParams();
   const { currentOrder } = useSelector((state) => state.sales);
 
-  // Initialize Form (New vs Edit)
+  // Initialize Form 
   useEffect(() => {
     if (id) {
       salesService.getById(id).then(res => {
