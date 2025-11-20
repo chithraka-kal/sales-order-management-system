@@ -5,15 +5,13 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 
 
-// !!! CRITICAL: MATCH THIS TO YOUR RUNNING BACKEND PORT !!!
-// Check your backend terminal. If it says listening on 5200, change this to 5200.
 const API_BASE = "http://localhost:5278/api"; 
 
 export default function SalesOrder() {
   const navigate = useNavigate();
 
   // --- STATE ---
-  // 1. Store lists from Database here
+  // 1. Store lists from Database 
   const [customers, setCustomers] = useState([]);
   const [items, setItems] = useState([]);
   
@@ -21,7 +19,7 @@ export default function SalesOrder() {
   const [invoiceData, setInvoiceData] = useState({ no: "INV-" + Date.now(), date: new Date().toISOString().split('T')[0] });
   const [rows, setRows] = useState([]);
 
-  // --- 2. FETCH DATA ON LOAD (The missing piece) ---
+  // --- 2. FETCH DATA ON LOAD  ---
   useEffect(() => {
 
     axios.get(`${API_BASE}/sales/customers`)
@@ -49,7 +47,7 @@ export default function SalesOrder() {
   // --- HANDLERS ---
   const handleCustomerChange = (e) => {
     const selectedId = parseInt(e.target.value);
-    // Look inside the REAL 'customers' state, not DUMMY data
+    // Look inside the REAL customers state
     const selectedCust = customers.find(c => c.id === selectedId);
     
     if (selectedCust) {
@@ -61,7 +59,7 @@ export default function SalesOrder() {
 
   const addRow = () => {
     setRows([...rows, { 
-      tempId: Date.now(), // Use temp ID for React key
+      tempId: Date.now(), 
       itemCode: "", description: "", note: "", 
       qty: 0, price: 0, taxRate: 0, exclAmount: 0, taxAmount: 0, inclAmount: 0 
     }]);
@@ -71,7 +69,7 @@ export default function SalesOrder() {
     const newRows = [...rows];
     let currentRow = { ...newRows[index], [field]: value };
 
-    // Auto-fill from REAL 'items' state
+    // Auto-fill from REAL items state
     if (field === "itemCode" || field === "description") {
       const item = items.find(i => i.code === value || i.description === value);
       if (item) {
