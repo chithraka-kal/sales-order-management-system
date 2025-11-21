@@ -44,7 +44,7 @@ This project follows the recommended folder structure:
   ├── Domain (Entities)
   └── Infrastructure (Data, Repositories)
 
-/client
+/Frontend
   ├── src
   │   ├── components (Reusable UI controls)
   │   ├── pages (Home, SalesOrder)
